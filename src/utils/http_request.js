@@ -1,43 +1,16 @@
 import axios from 'axios'
 
-import router from '@/router';
-
 import configs from '@/config';
 
 import {
-    getToken
+    getToken,
+    statusNotice,
+    statusFilter
 } from '@/utils/tool'
-
-const RouterBasicsPath = configs.routerBasicsPath;
 
 axios.defaults.retry = configs.retry;
 axios.defaults.timeout = configs.timeOut; // 超时时间
 axios.defaults.baseUrl = configs.baseUrl.pro;
-
-const statusFilter = {
-    200:({data,status})=>{
-        console.log(data,status);
-        return {data,status};
-    },
-    500:(error)=>{
-        // 日志
-        
-        router.push({name:RouterBasicsPath.serverError})
-        return Promise.reject(error.response)
-    },
-    404:(error)=>{
-        // 日志
-
-        router.push({name:RouterBasicsPath.serverEmpty})
-        return Promise.reject(error.response)
-    },
-    401:(error)=>{
-        // 日志
-
-        router.push({name:RouterBasicsPath.serverNotPower})
-        return Promise.reject(error.response)
-    },
-};
 
 class HttpRequest {
     constructor(baseUrl) {
@@ -79,6 +52,7 @@ class HttpRequest {
         },error => {
             this.destroy(url);
             if(error.response){
+                statusNotice[error.response.status]&&statusNotice[error.response.status](error);
                 statusFilter[error.response.status]&&statusFilter[error.response.status](error);
             }
             return Promise.reject(error);

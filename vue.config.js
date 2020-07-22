@@ -15,9 +15,8 @@ module.exports = {
             .set('_api',resolves('src/api'))
     },
     devServer: {
-        host:'0.0.0.0',
-        port:8080,
         https:false,
+        before: require('./mock/index.js'),
         proxy: {
             '/api/v1':{//接口请求格式：/api/v1/xxx/xx
                 target:         devServerTarget,//接口服务器域名

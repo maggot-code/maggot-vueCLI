@@ -1,6 +1,10 @@
 <!--  -->
 <template>
-    <div class="home-zy">首页</div>
+    <div class="home-zy">
+        <Alert banner closable type="warning">通知：通知内容。。。</Alert>
+        首页
+        <Button type="error" @click="click">Error</Button>
+    </div>
 </template>
 
 <script>
@@ -11,7 +15,7 @@
         data() {
             //这里存放数据
             return {
-
+                arr:[],
             };
         },
         //监听属性 类似于data概念
@@ -20,11 +24,15 @@
         watch: {},
         //方法集合
         methods: {
-
+            click(){
+                this.$Message.destroy();
+            }
         },
         //生命周期 - 创建完成（可以访问当前this实例）
         created() {
-
+            this.$api.ping().then(res=>{
+                console.log(res);
+            })
         },
         //生命周期 - 挂载完成（可以访问DOM元素）
         mounted() {
