@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './routes'
 import configs from '../config/index'
-import {pageLoading,getToken,cacheDelete} from '../utils/tool'
+import {getToken,cacheDelete} from '../utils/tool'
+import {pageLoading} from '../utils/feedback'
 
 const routerBasicsPath = {
 	'login':(to,next,token) => {

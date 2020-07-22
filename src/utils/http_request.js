@@ -4,9 +4,12 @@ import configs from '@/config';
 
 import {
     getToken,
+} from '@/utils/tool'
+
+import {
     statusNotice,
     statusFilter
-} from '@/utils/tool'
+} from '@/utils/feedback'
 
 axios.defaults.retry = configs.retry;
 axios.defaults.timeout = configs.timeOut; // 超时时间
@@ -52,7 +55,7 @@ class HttpRequest {
         },error => {
             this.destroy(url);
             if(error.response){
-                statusNotice[error.response.status]&&statusNotice[error.response.status](error);
+                configs.errorTips && statusNotice[error.response.status] && statusNotice[error.response.status](error);
                 statusFilter[error.response.status]&&statusFilter[error.response.status](error);
             }
             return Promise.reject(error);

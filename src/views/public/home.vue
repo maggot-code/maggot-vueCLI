@@ -3,15 +3,20 @@
     <div class="home-zy">
         <Alert banner closable type="warning">通知：通知内容。。。</Alert>
         首页
-        <Button type="error" @click="click">Error</Button>
+        <Button type="success" @click="success">Success</Button>
+        <Button type="error" @click="error">Error</Button>
+        <div ref="box" style="position: relative;width:200px;height:200px;background:#333;"></div>
+        <!-- <mask-loading></mask-loading> -->
     </div>
 </template>
 
 <script>
-
+    // import MaskLoading from "_c/dynamic/mask_loading";
     export default {
         name:'home-zy',
-        components: {},
+        components: {
+            // MaskLoading
+        },
         data() {
             //这里存放数据
             return {
@@ -24,8 +29,18 @@
         watch: {},
         //方法集合
         methods: {
-            click(){
-                this.$Message.destroy();
+            success(){
+                // this.$Message.loading({
+                //     ...this.$op.msg,
+                //     content:'hahahha',
+                // })
+
+                // let assembly = 'mask_loading';
+
+                
+            },
+            error(){
+                // this.$Message.destroy();
             }
         },
         //生命周期 - 创建完成（可以访问当前this实例）
@@ -47,6 +62,4 @@
         activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
     }
 </script>
-<style lang='scss' scoped>
-
-</style>
+<style lang='scss'></style>

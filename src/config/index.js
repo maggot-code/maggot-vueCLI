@@ -4,13 +4,18 @@ export default {
      */
     title: 'VUE-CLI-1.0',
     /**
+     * @description 是否启用请求失败提醒
+     */
+    errorTips: false,
+    /**
+    /**
      * @description token在Cookie中存储的天数，默认1天
      */
     cookieExpires: 1,
     /**
      * @description 路由是否拦截token
      */
-    tokenCheck: true,
+    tokenCheck: false,
     /**
      * @description api基础地质
      */

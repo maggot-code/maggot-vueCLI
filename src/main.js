@@ -1,18 +1,24 @@
+import './plugins/iview'
+
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import config from '@/config'
-import './plugins/iview'
+
 import * as tool from '@/utils/tool'
+import * as feedback from '@/utils/feedback'
 import * as api_public from '_api/public'
+import * as options from '@/config/options'
 
 Vue.config.productionTip = false
 
 Vue.prototype.$store = store;
 Vue.prototype.$config = config;
 Vue.prototype.$tool = tool;
+Vue.prototype.$fb = feedback;
 Vue.prototype.$api = api_public;
+Vue.prototype.$op = options;
 
 new Vue({
 	router,
