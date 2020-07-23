@@ -11,6 +11,8 @@ import * as feedback from '@/utils/feedback'
 import * as api_public from '_api/public'
 import * as options from '@/config/options'
 
+import MaskLoad from '_c/dynamic/'
+
 Vue.config.productionTip = false
 
 Vue.prototype.$store = store;
@@ -19,6 +21,7 @@ Vue.prototype.$tool = tool;
 Vue.prototype.$fb = feedback;
 Vue.prototype.$api = api_public;
 Vue.prototype.$op = options;
+Vue.prototype.$ml = MaskLoad;
 
 new Vue({
 	router,

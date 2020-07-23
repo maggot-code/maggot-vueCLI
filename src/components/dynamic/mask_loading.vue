@@ -1,8 +1,6 @@
 <!--  -->
 <template>
-    <div class="mask-loading-zy">
-        123
-    </div>
+    <div class="mask-loading-zy">加载</div>
 </template>
 
 <script>
@@ -13,7 +11,7 @@
         data() {
             //这里存放数据
             return {
-
+                visible: false
             };
         },
         //监听属性 类似于data概念
@@ -41,6 +39,9 @@
         activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
     }
 </script>
-<style lang='scss' scoped>
-
+<style lang='scss'>
+.mask-loading-zy{
+    font-size: 32px;
+    line-height: 64px;
+}
 </style>

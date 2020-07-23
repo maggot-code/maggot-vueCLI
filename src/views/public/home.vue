@@ -35,12 +35,27 @@
                 //     content:'hahahha',
                 // })
 
-                // let assembly = 'mask_loading';
+                this.$ml.show({
+                    render: (h) => {
+                        return h('div', [
+                            h('Icon', {
+                                'class': 'demo-spin-icon-load',
+                                props: {
+                                    type: 'ios-loading',
+                                    size: 18
+                                }
+                            }),
+                            h('div', 'Loading')
+                        ])
+                    }
+                });
 
                 
             },
             error(){
                 // this.$Message.destroy();
+
+                this.$ml.hide();
             }
         },
         //生命周期 - 创建完成（可以访问当前this实例）
