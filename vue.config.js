@@ -1,5 +1,3 @@
-const devServerTarget = 'http://127.0.0.1:8080';
-
 const resolves = dir => require('path').join(__dirname, dir);
 
 module.exports = {
@@ -16,10 +14,10 @@ module.exports = {
     },
     devServer: {
         https:false,
-        before: require('./mock/index.js'),
+        // before: require('./mock/index.js'),
         proxy: {
             '/api/v1':{//接口请求格式：/api/v1/xxx/xx
-                target:         devServerTarget,//接口服务器域名
+                target:         process.env.VUE_APP_BASE_URL,//接口服务器域名
                 ws:             false,
                 secure:         false,
                 changeOrigin:   true,

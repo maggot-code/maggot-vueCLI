@@ -1,13 +1,6 @@
 <!--  -->
 <template>
-    <div class="home-zy">
-        <Alert banner closable type="warning">通知：通知内容。。。</Alert>
-        首页
-        <Button type="success" @click="success">Success</Button>
-        <Button type="error" @click="error">Error</Button>
-        <div ref="box" style="width:200px;height:200px;background:#333;"></div>
-        <!-- <mask-loading></mask-loading> -->
-    </div>
+    <div class="home-zy">Home</div>
 </template>
 
 <script>
@@ -25,40 +18,9 @@
         //监控data中的数据变化
         watch: {},
         //方法集合
-        methods: {
-            success(){
-                // this.$Message.loading({
-                //     ...this.$op.msg,
-                //     content:'hahahha',
-                // })
-
-                this.$ml.show({
-                    render: (h) => {
-                        return h('div', [
-                            h('Icon', {
-                                'class': 'demo-spin-icon-load',
-                                props: {
-                                    type: 'ios-loading',
-                                    size: 18
-                                }
-                            }),
-                            h('div', 'Loading')
-                        ])
-                    }
-                });
-            },
-            error(){
-                // this.$Message.destroy();
-
-                this.$ml.hide();
-            }
-        },
+        methods: {},
         //生命周期 - 创建完成（可以访问当前this实例）
-        created() {
-            // this.$api.ping().then(res=>{
-            //     console.log(res);
-            // })
-        },
+        created() {},
         //生命周期 - 挂载完成（可以访问DOM元素）
         mounted() {
 

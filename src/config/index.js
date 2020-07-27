@@ -6,7 +6,7 @@ export default {
     /**
      * @description 是否启用请求失败提醒
      */
-    errorTips: false,
+    errorTips: true,
     /**
     /**
      * @description token在Cookie中存储的天数，默认1天
@@ -23,10 +23,11 @@ export default {
     /**
      * @description api服务地址
      */
-    baseUrl: {
-        dev:'http://localhost:8080',
-        pro:'http://0.0.0.0:8080'
-    },
+    // baseUrl : {
+    //     dev:'http://localhost:8080',
+    //     pro:'http://0.0.0.0:8080',
+    //     test:'http://0.0.0.0:8848'
+    // },
     /**
      * @description 请求超时时间
      */

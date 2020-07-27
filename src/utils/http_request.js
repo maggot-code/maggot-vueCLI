@@ -13,11 +13,11 @@ import {
 
 axios.defaults.retry = configs.retry;
 axios.defaults.timeout = configs.timeOut; // 超时时间
-axios.defaults.baseUrl = configs.baseUrl.pro;
+axios.defaults.baseUrl = process.env.VUE_APP_BASE_URL;
 
 class HttpRequest {
-    constructor(baseUrl) {
-        this.baseUrl = baseUrl;
+    constructor() {
+        this.baseUrl = axios.defaults.baseUrl;
         this.queue = {};
     }
     getInsideConfig () {
