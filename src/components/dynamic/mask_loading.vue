@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-    <div class="mask-loading-zy">加载</div>
+    <div class="mask-loading-zy"><slot>加载</slot></div>
 </template>
 
 <script>
@@ -41,6 +41,8 @@
 </script>
 <style lang='scss'>
 .mask-loading-zy{
+    width: 100%;
+    height: 100%;
     font-size: 32px;
     line-height: 64px;
 }

@@ -5,18 +5,15 @@
         首页
         <Button type="success" @click="success">Success</Button>
         <Button type="error" @click="error">Error</Button>
-        <div ref="box" style="position: relative;width:200px;height:200px;background:#333;"></div>
+        <div ref="box" style="width:200px;height:200px;background:#333;"></div>
         <!-- <mask-loading></mask-loading> -->
     </div>
 </template>
 
 <script>
-    // import MaskLoading from "_c/dynamic/mask_loading";
     export default {
         name:'home-zy',
-        components: {
-            // MaskLoading
-        },
+        components: {},
         data() {
             //这里存放数据
             return {
@@ -49,8 +46,6 @@
                         ])
                     }
                 });
-
-                
             },
             error(){
                 // this.$Message.destroy();
@@ -60,9 +55,9 @@
         },
         //生命周期 - 创建完成（可以访问当前this实例）
         created() {
-            this.$api.ping().then(res=>{
-                console.log(res);
-            })
+            // this.$api.ping().then(res=>{
+            //     console.log(res);
+            // })
         },
         //生命周期 - 挂载完成（可以访问DOM元素）
         mounted() {

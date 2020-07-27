@@ -28,17 +28,24 @@ MaskLoading.newInstance = properites => {
                     props: {}
                 });
             }
-            console.log(vnode);
             return h('div', {
                 'class': 'mask-loading-spin-zy',
                 'style': {
+                    'position':'absolute',
+                    'top':0,
+                    'left':0,
+                    'width':'100%',
+                    'height':'100%',
                     'z-index': 2020 + tIndex
                 }
             }, [vnode]);
         }
     })
 
+    console.log(Instance);
     const component = Instance.$mount();
+    console.log(component);
+    document.body.style.position = 'relative'
     document.body.appendChild(component.$el);
     const maskLoad = Instance.$children[0];
 

@@ -12,6 +12,7 @@ function getMaskLoadingInstance (render = undefined) {
 
 function loading (options) {
     const render = ('render' in options) ? options.render : undefined;
+
     let instance = getMaskLoadingInstance(render);
 
     instance.show(options);
